@@ -88,7 +88,7 @@ class MoneyManager extends Component {
           </ul>
         </div>
         <div className="bg3">
-          <form onSubmit={this.onAddItem}>
+          <form onSubmit={this.onAddItem} id="formFeild">
             <div className="bg2">
               <h1 className="heading">Add Transaction</h1>
               <label className="" htmlFor="data-testid">
