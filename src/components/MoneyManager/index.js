@@ -45,7 +45,8 @@ class MoneyManager extends Component {
     this.setState({type: e.target.value})
   }
 
-  onAddItem = () => {
+  onAddItem = event => {
+    event.preventDefualt()
     const {title, amount, type} = this.state
 
     const newform = {
@@ -87,7 +88,7 @@ class MoneyManager extends Component {
           </ul>
         </div>
         <div className="bg3">
-          <form onClick={this.onAddItem}>
+          <form onSubmit={this.onAddItem}>
             <div className="bg2">
               <h1 className="heading">Add Transaction</h1>
               <label className="" htmlFor="data-testid">
@@ -114,11 +115,12 @@ class MoneyManager extends Component {
                 <option value="income">Incomes</option>
                 <option value="expenses">Expenses</option>
               </select>
-              <button className="btn" type="button">
+              <button className="btn" type="submit">
                 Add
               </button>
             </div>
           </form>
+
           <div className="bg2">
             <h1 className="headline">History</h1>
             <div className="bgcolor">
